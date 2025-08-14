@@ -27,7 +27,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
 		}
 
 		(await draftMode()).disable();
-		makeDraftModeWorkWithinIframes();
+		await makeDraftModeWorkWithinIframes();
 	} catch (error) {
 		return handleUnexpectedError(error);
 	}

@@ -34,7 +34,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
 
 		(await draftMode()).enable();
 
-		makeDraftModeWorkWithinIframes();
+		await makeDraftModeWorkWithinIframes();
 	} catch (error) {
 		return handleUnexpectedError(error);
 	}
