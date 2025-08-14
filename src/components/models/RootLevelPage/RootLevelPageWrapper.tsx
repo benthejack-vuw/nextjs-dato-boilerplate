@@ -1,7 +1,10 @@
 import dynamic from "next/dynamic";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
-import { PageBySlugDocument } from "@/graphql/generated/graphql";
+import {
+	PageBySlugDocument,
+	RootLevelPageBySlugDocument,
+} from "@/graphql/generated/graphql";
 import { datoRequest } from "@/graphql/graphql-request";
 import RootLevelPage from "./RootLevelPage";
 
@@ -11,7 +14,7 @@ const LiveUpdatesRootLevelPage = dynamic(
 
 export default async function RootLevelPageWrapper({ slug }: { slug: string }) {
 	const isDraftMode = (await draftMode()).isEnabled;
-	const pageQuery = await datoRequest(PageBySlugDocument, {
+	const pageQuery = await datoRequest(RootLevelPageBySlugDocument, {
 		variables: { slug },
 	});
 

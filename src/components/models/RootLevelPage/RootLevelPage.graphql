@@ -5,3 +5,15 @@ fragment RootLevelPage on RootLevelPageRecord {
   ...DynamicComponentCollection
  }
 }
+
+query AllRootLevelPageSlugs {
+  allRootLevelPages {
+    slug
+  }
+}
+
+query RootLevelPageBySlug ($slug: String!){
+  rootLevelPage(filter: {slug: {eq: $slug}}) {
+    ...RootLevelPage
+  }
+}

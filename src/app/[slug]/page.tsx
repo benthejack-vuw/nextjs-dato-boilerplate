@@ -1,5 +1,8 @@
 import RootLevelPageWrapper from "@/components/models/RootLevelPage/RootLevelPageWrapper";
-import { AllPageSlugsDocument } from "@/graphql/generated/graphql";
+import {
+	AllPageSlugsDocument,
+	AllRootLevelPageSlugsDocument,
+} from "@/graphql/generated/graphql";
 import { datoRequest } from "@/graphql/graphql-request";
 
 type PageProps = {
@@ -9,7 +12,7 @@ type PageProps = {
 };
 
 export async function generateStaticParams() {
-	const result = await datoRequest(AllPageSlugsDocument);
+	const result = await datoRequest(AllRootLevelPageSlugsDocument);
 	return result.allRootLevelPages.map(({ slug }) => ({
 		slug,
 	}));

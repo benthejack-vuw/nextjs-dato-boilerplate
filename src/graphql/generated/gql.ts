@@ -18,14 +18,14 @@ type Documents = {
     "fragment DynamicComponent on RecordInterface {\n  ... on RecordInterface {\n    __typename\n    id\n  }\n  ... on PageHeadingRecord {\n    ...PageHeading\n  }\n  ... on GenericParagraphRecord {\n    ...GenericParagraph\n  }\n}\n\nfragment DynamicComponentCollection on DynamicComponentCollectionRecord {\n  components {\n    ...DynamicComponent\n  }\n}": typeof types.DynamicComponentFragmentDoc,
     "fragment GenericParagraph on GenericParagraphRecord {\n  copy\n}": typeof types.GenericParagraphFragmentDoc,
     "fragment PageHeading on PageHeadingRecord {\n  copy\n}": typeof types.PageHeadingFragmentDoc,
-    "fragment RootLevelPage on RootLevelPageRecord {\n  title\n  slug\n  components {\n    ...DynamicComponentCollection\n  }\n}": typeof types.RootLevelPageFragmentDoc,
+    "fragment RootLevelPage on RootLevelPageRecord {\n  title\n  slug\n  components {\n    ...DynamicComponentCollection\n  }\n}\n\nquery AllRootLevelPageSlugs {\n  allRootLevelPages {\n    slug\n  }\n}\n\nquery RootLevelPageBySlug($slug: String!) {\n  rootLevelPage(filter: {slug: {eq: $slug}}) {\n    ...RootLevelPage\n  }\n}": typeof types.RootLevelPageFragmentDoc,
 };
 const documents: Documents = {
     "query AllPageSlugs {\n  allRootLevelPages {\n    slug\n  }\n}\n\nquery PageBySlug($slug: String!) {\n  rootLevelPage(filter: {slug: {eq: $slug}}) {\n    ...RootLevelPage\n  }\n}": types.AllPageSlugsDocument,
     "fragment DynamicComponent on RecordInterface {\n  ... on RecordInterface {\n    __typename\n    id\n  }\n  ... on PageHeadingRecord {\n    ...PageHeading\n  }\n  ... on GenericParagraphRecord {\n    ...GenericParagraph\n  }\n}\n\nfragment DynamicComponentCollection on DynamicComponentCollectionRecord {\n  components {\n    ...DynamicComponent\n  }\n}": types.DynamicComponentFragmentDoc,
     "fragment GenericParagraph on GenericParagraphRecord {\n  copy\n}": types.GenericParagraphFragmentDoc,
     "fragment PageHeading on PageHeadingRecord {\n  copy\n}": types.PageHeadingFragmentDoc,
-    "fragment RootLevelPage on RootLevelPageRecord {\n  title\n  slug\n  components {\n    ...DynamicComponentCollection\n  }\n}": types.RootLevelPageFragmentDoc,
+    "fragment RootLevelPage on RootLevelPageRecord {\n  title\n  slug\n  components {\n    ...DynamicComponentCollection\n  }\n}\n\nquery AllRootLevelPageSlugs {\n  allRootLevelPages {\n    slug\n  }\n}\n\nquery RootLevelPageBySlug($slug: String!) {\n  rootLevelPage(filter: {slug: {eq: $slug}}) {\n    ...RootLevelPage\n  }\n}": types.RootLevelPageFragmentDoc,
 };
 
 /**
@@ -61,7 +61,7 @@ export function graphql(source: "fragment PageHeading on PageHeadingRecord {\n  
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "fragment RootLevelPage on RootLevelPageRecord {\n  title\n  slug\n  components {\n    ...DynamicComponentCollection\n  }\n}"): (typeof documents)["fragment RootLevelPage on RootLevelPageRecord {\n  title\n  slug\n  components {\n    ...DynamicComponentCollection\n  }\n}"];
+export function graphql(source: "fragment RootLevelPage on RootLevelPageRecord {\n  title\n  slug\n  components {\n    ...DynamicComponentCollection\n  }\n}\n\nquery AllRootLevelPageSlugs {\n  allRootLevelPages {\n    slug\n  }\n}\n\nquery RootLevelPageBySlug($slug: String!) {\n  rootLevelPage(filter: {slug: {eq: $slug}}) {\n    ...RootLevelPage\n  }\n}"): (typeof documents)["fragment RootLevelPage on RootLevelPageRecord {\n  title\n  slug\n  components {\n    ...DynamicComponentCollection\n  }\n}\n\nquery AllRootLevelPageSlugs {\n  allRootLevelPages {\n    slug\n  }\n}\n\nquery RootLevelPageBySlug($slug: String!) {\n  rootLevelPage(filter: {slug: {eq: $slug}}) {\n    ...RootLevelPage\n  }\n}"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};
