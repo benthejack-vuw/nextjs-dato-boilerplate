@@ -49,7 +49,6 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 		const url = await recordToWebsiteRoute(item, itemType);
 		const forwardedHost = request.headers.get("x-forwarded-host");
 		const baseUrl = forwardedHost ? `https://${forwardedHost}` : request.url;
-		console.log("BASE URL", baseUrl);
 
 		const response: WebPreviewsResponse = { previewLinks: [] };
 
