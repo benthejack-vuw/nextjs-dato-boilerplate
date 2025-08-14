@@ -1,0 +1,11 @@
+query AllPageSlugs {
+  allRootLevelPages {
+    slug
+  }
+}
+
+query PageBySlug ($slug: String!){
+  rootLevelPage(filter: {slug: {eq: $slug}}) {
+    ...RootLevelPage
+  }
+}

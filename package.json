@@ -1,0 +1,36 @@
+{
+	"name": "catalyst website",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev --turbopack",
+		"generate": "dotenvx run -f .env.local -- graphql-codegen",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@datocms/cda-client": "^0.2.7",
+		"@datocms/cma-client": "^5.0.1",
+		"graphql": "^16.11.0",
+		"next": "15.4.3",
+		"react": "19.1.0",
+		"react-datocms": "^7.2.2",
+		"react-dom": "19.1.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.1.2",
+		"@datocms/cli": "^2.0.23",
+		"@dotenvx/dotenvx": "^1.48.3",
+		"@graphql-codegen/cli": "^5.0.7",
+		"@graphql-typed-document-node/core": "^3.2.0",
+		"@parcel/watcher": "^2.5.1",
+		"@tailwindcss/postcss": "^4",
+		"@types/node": "^20",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+		"tailwindcss": "^4",
+		"typescript": "^5",
+		"vercel": "^44.5.3"
+	}
+}

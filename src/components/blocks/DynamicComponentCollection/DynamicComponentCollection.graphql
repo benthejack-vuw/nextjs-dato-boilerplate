@@ -1,0 +1,19 @@
+fragment DynamicComponent on RecordInterface {
+  ... on RecordInterface {
+    __typename
+    id
+  }
+  ... on PageHeadingRecord {
+    ...PageHeading
+  }
+  ... on GenericParagraphRecord {
+    ...GenericParagraph
+  }
+}
+
+
+fragment DynamicComponentCollection on DynamicComponentCollectionRecord {
+    components {
+      ...DynamicComponent
+    }
+}

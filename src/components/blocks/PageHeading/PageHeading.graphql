@@ -1,0 +1,3 @@
+fragment PageHeading on PageHeadingRecord {
+  copy
+}

@@ -1,0 +1,3 @@
+fragment GenericParagraph on GenericParagraphRecord {
+  copy
+}

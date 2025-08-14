@@ -1,0 +1,7 @@
+fragment RootLevelPage on RootLevelPageRecord {
+ title
+ slug
+ components {
+  ...DynamicComponentCollection
+ }
+}
