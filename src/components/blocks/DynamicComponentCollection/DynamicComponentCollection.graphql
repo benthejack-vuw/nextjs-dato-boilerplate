@@ -9,6 +9,15 @@ fragment DynamicComponent on RecordInterface {
   ... on GenericParagraphRecord {
     ...GenericParagraph
   }
+  ... on LinkCardGridRecord {
+    ...LinkCardGrid
+  }
+  ... on LinkRecord {
+    ...Link
+  }
+  ... on StructuredTextRecord {
+    ...StructuredText
+  }
 }
 
 

@@ -14,6 +14,13 @@ const DynamicComponentDictionary: DynamicComponentDictionary = {
 	GenericParagraphRecord: dynamic(
 		() => import("@/components/blocks/GenericParagraph/GenericParagraph"),
 	),
+	LinkCardGridRecord: dynamic(
+		() => import("@/components/blocks/LinkCardGrid/LinkCardGrid"),
+	),
+	LinkRecord: dynamic(() => import("@/components/blocks/Link/Link")),
+	StructuredTextRecord: dynamic(
+		() => import("@/components/blocks/StructuredText/StructuredText"),
+	),
 };
 
 export { DynamicComponentDictionary };

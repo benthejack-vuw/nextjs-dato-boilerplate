@@ -1,17 +1,10 @@
 import type { ComponentProps } from "react";
+import { ComponentError } from "@/components/ComponentError/ComponentError";
 import type { DynamicComponentCollectionFragment } from "@/graphql/generated/graphql";
 import { DynamicComponentDictionary } from "./DynamicComponentDictionary";
 
-const ComponentNotFound = ({ name }: { name: string }) => (
-	<div>
-		{name} wasn't found in the component dictionary. it's probably still under
-		development.
-	</div>
-);
-
 const DynamicComponentCollection = ({
 	components,
-	__typename,
 	...props
 }: ComponentProps<"div"> & DynamicComponentCollectionFragment) => {
 	return (
@@ -20,9 +13,14 @@ const DynamicComponentCollection = ({
 				const Component = DynamicComponentDictionary[component.__typename];
 
 				if (!Component) {
-					return <ComponentNotFound name={component.__typename} />;
+					return (
+						<ComponentError
+							message={`"${component.__typename}" hasn't been added to component dictionary yet. it's probably still in development`}
+						/>
+					);
 				}
 
+				console.log("component", component);
 				return (
 					<Component
 						key={component.id}

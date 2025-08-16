@@ -1,4 +1,4 @@
-import type { TadaDocumentNode } from "gql.tada";
+import type { TypedDocumentNode } from "@graphql-typed-document-node/core";
 import type { Metadata, ResolvingMetadata } from "next";
 import { draftMode } from "next/headers";
 import {
@@ -6,7 +6,7 @@ import {
 	type TitleMetaLinkTag,
 	toNextMetadata,
 } from "react-datocms/seo";
-import { executeQuery } from "./executeQuery";
+import { datoRequest } from "@/graphql/graphql-request";
 
 /**
  * Generates a function that fits the Next.js `generateMetadata()` format. This
@@ -27,7 +27,7 @@ export function generateMetadataFn<PageProps, Result, Variables>(
 
 		const [parentMetadata, data] = await Promise.all([
 			parent,
-			executeQuery(options.query, {
+			datoRequest(options.query, {
 				variables,
 				includeDrafts: isDraftModeEnabled,
 			}),
@@ -49,7 +49,7 @@ export type BuildQueryVariablesFn<PageProps, Variables> = (
 
 export type GenerateMetadataFnOptions<PageProps, Result, Variables> = {
 	/** The GraphQL query that will be used to generate metadata. */
-	query: TadaDocumentNode<Result, Variables>;
+	query: TypedDocumentNode<Result, Variables>;
 
 	/** A function that takes page props and builds and returns the variables
 	 * required by the GraphQL query. */

@@ -1,0 +1,17 @@
+fragment LinkCardGrid on LinkCardGridRecord {
+  title
+  links {
+    ... on RecordInterface {
+      id
+    }
+    ... on InternalLinkRecord {
+      ...InternalLink
+    }
+    ... on ExternalLinkRecord {
+      ...ExternalLink
+    }
+    ... on OverridesInternalLinkRecord {
+      ...OverridesInternalLink
+    }
+  }
+}

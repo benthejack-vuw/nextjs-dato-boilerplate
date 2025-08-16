@@ -1,5 +1,5 @@
 import { type NextRequest, NextResponse } from "next/server";
-import { recordToWebsiteRoute } from "@/lib/routes";
+import { modelPath } from "@/lib/routes";
 import {
 	handleUnexpectedError,
 	invalidRequestResponse,
@@ -46,7 +46,10 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 		const { item, itemType } = await request.json();
 
 		// We can use this info to generate the frontend URL associated
-		const url = await recordToWebsiteRoute(item, itemType);
+		const itemApiKey = itemType.attributes.api_key;
+		const itemSlug = item.attributes.slug as string;
+		const url = modelPath(itemApiKey, itemSlug);
+
 		const forwardedHost = request.headers.get("x-forwarded-host");
 		const baseUrl = forwardedHost ? `https://${forwardedHost}` : request.url;
 

@@ -1,0 +1,11 @@
+fragment StructuredText on StructuredTextRecord {
+  text {
+    value
+    blocks {
+      ...StructuredTextBlock
+    }
+    links {
+      ...StructuredTextLinks
+    }
+  }
+}

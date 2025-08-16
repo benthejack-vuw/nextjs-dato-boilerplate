@@ -1,0 +1,58 @@
+fragment Video on UploadVideoField {
+  muxPlaybackId
+  title
+  videoWidth: width
+  videoHeight: height
+  blurUpThumb
+  blurhash
+}
+
+fragment StaticImage on FileFieldInterface {
+  alt
+  url
+  blurUpThumb
+  width
+  height
+}
+
+fragment ResponsiveImage on FileFieldInterface {
+  responsiveImage(
+    sizes: "(max-width: 1024px) 100vw, 1300px"
+    imgixParams: { fit: crop, w: 1300, auto: format }
+  ) {
+    sizes
+    src
+    width
+    height
+    alt
+    title
+    base64
+  }
+}
+
+fragment ResponsiveMediaAsset on FileFieldInterface {
+  ...ResponsiveImage
+  ...StaticImage
+  video {
+    ...Video
+  }
+}
+
+fragment LinkMediaAsset on FileFieldInterface {
+  responsiveImage(
+    sizes: "(max-width: 1024px) 100vh, 1024px"
+    imgixParams: { fit: crop, w: 1024, auto: format }
+  ) {
+    sizes
+    src
+    width
+    height
+    alt
+    title
+    base64
+  }
+  ...StaticImage
+  video {
+    ...Video
+  }
+}

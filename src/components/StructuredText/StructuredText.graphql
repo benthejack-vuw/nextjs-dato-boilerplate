@@ -1,0 +1,20 @@
+fragment StructuredTextBlock on RecordInterface {
+  ... on RecordInterface {
+    __typename
+    id
+  }
+  ... on MediaAssetRecord {
+    ...MediaAssetComponent
+  }
+}
+
+fragment StructuredTextLinks on RecordInterface {
+  ... on RecordInterface {
+    __typename
+    id
+    _modelApiKey
+  }
+  ... on RootLevelPageRecord {
+    ...RootLevelPageLink
+  }
+}
