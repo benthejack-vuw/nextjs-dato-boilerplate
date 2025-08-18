@@ -1,10 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { modelPath } from "@/lib/routes";
-import {
-	handleUnexpectedError,
-	invalidRequestResponse,
-	withCORS,
-} from "../utils";
+import { handleUnexpectedError, invalidRequestResponse, withCORS } from "../utils";
 
 export async function OPTIONS() {
 	return new Response("OK", withCORS());
@@ -31,7 +27,6 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 	try {
 		// Parse query string parameters
 		const token = request.nextUrl.searchParams.get("token");
-		console.log("tokeny is", token, process.env.SECRET_API_TOKEN);
 
 		// Ensure that the request is coming from a trusted source
 		if (token !== process.env.SECRET_API_TOKEN) {
@@ -73,7 +68,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 						 * endpoint that enables the Draft Mode.
 						 */
 						`/api/draft-mode/enable?url=${url}&token=${token}`,
-						baseUrl,
+						baseUrl
 					).toString(),
 				});
 			}
@@ -92,7 +87,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 						 * endpoint that disables the Draft Mode.
 						 */
 						`/api/draft-mode/disable?url=${url}`,
-						baseUrl,
+						baseUrl
 					).toString(),
 				});
 			}

@@ -1,0 +1,111 @@
+
+
+> @catalyst/web@0.1.0 check-types /home/ben/data/work/catalyst/apps/web
+> tsc --noEmit
+
+[96msrc/app/api/invalidate-cache/route.tsx[0m:[93m3[0m:[93m26[0m - [91merror[0m[90m TS2307: [0mCannot find module '@/lib/datocms/executeQuery' or its corresponding type declarations.
+
+[7m3[0m import { cacheTag } from "@/lib/datocms/executeQuery";
+[7m [0m [91m                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/app/api/utils.ts[0m:[93m3[0m:[93m32[0m - [91merror[0m[90m TS2307: [0mCannot find module 'serialize-error' or its corresponding type declarations.
+
+[7m3[0m import { serializeError } from "serialize-error";
+[7m [0m [91m                               ~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/blocks/dynamic-component-collection/dynamic-component-collection.tsx[0m:[93m4[0m:[93m44[0m - [91merror[0m[90m TS2307: [0mCannot find module './DynamicComponentDictionary' or its corresponding type declarations.
+
+[7m4[0m import { dynamicComponentDictionary } from "./DynamicComponentDictionary";
+[7m [0m [91m                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/blocks/generic-paragraph.tsx[0m:[93m2[0m:[93m28[0m - [91merror[0m[90m TS2307: [0mCannot find module '@/components/RenderMarkdown/RenderMarkdown' or its corresponding type declarations.
+
+[7m2[0m import RenderMarkdown from "@/components/RenderMarkdown/RenderMarkdown";
+[7m [0m [91m                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/blocks/link-card-grid.tsx[0m:[93m2[0m:[93m22[0m - [91merror[0m[90m TS2307: [0mCannot find module '@/components/LinkCard/LinkCard' or its corresponding type declarations.
+
+[7m2[0m import LinkCard from "@/components/LinkCard/LinkCard";
+[7m [0m [91m                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/blocks/link.tsx[0m:[93m2[0m:[93m22[0m - [91merror[0m[90m TS2307: [0mCannot find module '@/components/TextLink/TextLink' or its corresponding type declarations.
+
+[7m2[0m import TextLink from "@/components/TextLink/TextLink";
+[7m [0m [91m                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/blocks/media-asset-component.tsx[0m:[93m2[0m:[93m24[0m - [91merror[0m[90m TS2307: [0mCannot find module '@/components/MediaAsset/MediaAsset' or its corresponding type declarations.
+
+[7m2[0m import MediaAsset from "@/components/MediaAsset/MediaAsset";
+[7m [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/blocks/structured-text.tsx[0m:[93m2[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module '@/components/StructuredText/StructuredText' or its corresponding type declarations.
+
+[7m2[0m import StructuredTextRenderer from "@/components/StructuredText/StructuredText";
+[7m [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/link-card.tsx[0m:[93m3[0m:[93m32[0m - [91merror[0m[90m TS2307: [0mCannot find module '@/components/Links/NavigationLink' or its corresponding type declarations.
+
+[7m3[0m import { NavigationLink } from "@/components/Links/NavigationLink";
+[7m [0m [91m                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/link-card.tsx[0m:[93m4[0m:[93m24[0m - [91merror[0m[90m TS2307: [0mCannot find module '@/components/MediaAsset/MediaAsset' or its corresponding type declarations.
+
+[7m4[0m import MediaAsset from "@/components/MediaAsset/MediaAsset";
+[7m [0m [91m                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/models/root-level-page/live-updates.tsx[0m:[93m6[0m:[93m27[0m - [91merror[0m[90m TS2307: [0mCannot find module './RootLevelPage' or its corresponding type declarations.
+
+[7m6[0m import RootLevelPage from "./RootLevelPage";
+[7m [0m [91m                          ~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/models/root-level-page/root-level-page-wrapper.tsx[0m:[93m6[0m:[93m27[0m - [91merror[0m[90m TS2307: [0mCannot find module './RootLevelPage' or its corresponding type declarations.
+
+[7m6[0m import RootLevelPage from "./RootLevelPage";
+[7m [0m [91m                          ~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/navigation-link.tsx[0m:[93m4[0m:[93m26[0m - [91merror[0m[90m TS2307: [0mCannot find module './DatoLink' or its corresponding type declarations.
+
+[7m4[0m import { DatoLink } from "./DatoLink";
+[7m [0m [91m                         ~~~~~~~~~~~~[0m
+
+[96msrc/components/structured-text/structured-text-block.tsx[0m:[93m3[0m:[93m38[0m - [91merror[0m[90m TS2307: [0mCannot find module './structuredTextComponentDictionary' or its corresponding type declarations.
+
+[7m3[0m import { structuredTextBlocks } from "./structuredTextComponentDictionary";
+[7m [0m [91m                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/structured-text/structured-text.tsx[0m:[93m7[0m:[93m37[0m - [91merror[0m[90m TS2307: [0mCannot find module './StructuredTextBlock' or its corresponding type declarations.
+
+[7m7[0m import { StructuredTextBlock } from "./StructuredTextBlock";
+[7m [0m [91m                                    ~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/text-link.tsx[0m:[93m3[0m:[93m46[0m - [91merror[0m[90m TS2307: [0mCannot find module '../Links/NavigationLink' or its corresponding type declarations.
+
+[7m3[0m import { type Linkish, NavigationLink } from "../Links/NavigationLink";
+[7m [0m [91m                                             ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/lib/dato/generateMetadataFunction.ts[0m:[93m5[0m:[93m29[0m - [91merror[0m[90m TS2307: [0mCannot find module '@/graphql/graphql-request' or its corresponding type declarations.
+
+[7m5[0m import { datoRequest } from "@/graphql/graphql-request";
+[7m [0m [91m                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+Found 17 errors in 16 files.
+
+Errors  Files
+     1  src/app/api/invalidate-cache/route.tsx[90m:3[0m
+     1  src/app/api/utils.ts[90m:3[0m
+     1  src/components/blocks/dynamic-component-collection/dynamic-component-collection.tsx[90m:4[0m
+     1  src/components/blocks/generic-paragraph.tsx[90m:2[0m
+     1  src/components/blocks/link-card-grid.tsx[90m:2[0m
+     1  src/components/blocks/link.tsx[90m:2[0m
+     1  src/components/blocks/media-asset-component.tsx[90m:2[0m
+     1  src/components/blocks/structured-text.tsx[90m:2[0m
+     2  src/components/link-card.tsx[90m:3[0m
+     1  src/components/models/root-level-page/live-updates.tsx[90m:6[0m
+     1  src/components/models/root-level-page/root-level-page-wrapper.tsx[90m:6[0m
+     1  src/components/navigation-link.tsx[90m:4[0m
+     1  src/components/structured-text/structured-text-block.tsx[90m:3[0m
+     1  src/components/structured-text/structured-text.tsx[90m:7[0m
+     1  src/components/text-link.tsx[90m:3[0m
+     1  src/lib/dato/generateMetadataFunction.ts[90m:5[0m
+[41m[30m ELIFECYCLE [39m[49m [31mCommand failed with exit code 2.[39m

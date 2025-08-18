@@ -1,9 +1,6 @@
-import RootLevelPageWrapper from "@/components/models/RootLevelPage/RootLevelPageWrapper";
-import {
-	AllPageSlugsDocument,
-	AllRootLevelPageSlugsDocument,
-} from "@/graphql/generated/graphql";
-import { datoRequest } from "@/graphql/graphql-request";
+import { AllRootLevelPageSlugsDocument } from "@catalyst/types/dato/graphql";
+import RootLevelPageWrapper from "@/components/models/root-level-page/root-level-page-wrapper";
+import { datoRequest } from "@/lib/dato/dato-request";
 
 type PageProps = {
 	params: Promise<{

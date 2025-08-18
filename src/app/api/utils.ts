@@ -29,7 +29,7 @@ export function handleUnexpectedError(error: unknown) {
 				request: error.request,
 				response: error.response,
 			},
-			withCORS({ status: 500 }),
+			withCORS({ status: 500 })
 		);
 	}
 
@@ -42,7 +42,7 @@ export function invalidRequestResponse(error: unknown, status = 422) {
 			success: false,
 			error,
 		},
-		withCORS({ status }),
+		withCORS({ status })
 	);
 }
 
@@ -52,7 +52,7 @@ export function successfulResponse(data?: unknown, status = 200) {
 			success: true,
 			data,
 		},
-		withCORS({ status }),
+		withCORS({ status })
 	);
 }
 

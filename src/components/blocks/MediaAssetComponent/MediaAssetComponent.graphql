@@ -1,5 +1,0 @@
-fragment MediaAssetComponent on MediaAssetRecord {
-  asset {
-    ...ResponsiveMediaAsset
-  }
-}

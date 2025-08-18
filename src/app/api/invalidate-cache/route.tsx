@@ -1,11 +1,7 @@
 import { revalidateTag } from "next/cache";
 import type { NextRequest, NextResponse } from "next/server";
-import { cacheTag } from "@/lib/datocms/executeQuery";
-import {
-	handleUnexpectedError,
-	invalidRequestResponse,
-	successfulResponse,
-} from "../utils";
+import { cacheTag } from "@/lib/dato/dato-request";
+import { handleUnexpectedError, invalidRequestResponse, successfulResponse } from "../utils";
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
 	try {
